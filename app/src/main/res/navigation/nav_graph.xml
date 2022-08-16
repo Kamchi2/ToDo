@@ -2,17 +2,31 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/homeFragment">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/onBoardingFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.todo.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="Заметки"
+        tools:layout="@layout/fragment_home"/>
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.todo.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Профиль"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.todo.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding">
+        <action
+            android:id="@+id/clearBackStack"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
