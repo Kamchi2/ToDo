@@ -28,15 +28,20 @@ class DatePickerFragment : DialogFragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        calendar()
+        setupCalendar()
     }
-    private fun calendar() {
-        binding.calendarView.setOnDateChangeListener { view, year, month, day->
-            val bundle: Bundle = Bundle()
-            bundle.putString("key",
-                day.toString()+"."+month.toString()+"."+year.toString())
-            setFragmentResult("date", bundle)
+
+    private fun setupCalendar() {
+        binding.calendarView.setOnDateChangeListener{view, year, month, dayOfMonth->
+            val msg =  "" + dayOfMonth + "." + (month + 1) + "." + year
+
+            val bundle = Bundle()
+            bundle.putString("key", msg.toString())
+
+            setFragmentResult("myKey", bundle)
         }
     }
+
+
 }
 

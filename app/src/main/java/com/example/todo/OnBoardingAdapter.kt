@@ -2,8 +2,11 @@ package com.example.todo
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo.databinding.ItemOnBoardingBinding
+import com.example.todo.OnItemClicker
+import com.example.todo.OnBoardingModel
 
 class OnBoardingAdapter(private val list: ArrayList<OnBoardingModel>, val listener: OnItemClicker) :
     RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
